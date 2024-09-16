@@ -1,20 +1,63 @@
 // consoleCalculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+// consoleCalculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
 #include <iostream>
+
+using namespace std;
+
+void add() {
+    cout << "";
+}
+
+void subtract() {
+    cout << "";
+}
+
+void multiply() {
+    cout << "";
+}
+
+void divide() {
+    cout << "";
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    std::cout << "Calculator Console Application\n" << endl;
+
+    // Choosing an operation
+    string operation;
+    bool correctInput = false;
+
+    while (!correctInput) {
+        cout << "Please enter the operation to perform. Format: a+b | a-b | a*b | a/b" << endl;
+
+        cin >> operation;
+
+        if (operation == "a+b" || operation == "a-b" || operation == "a*b" || operation == "a/b") {
+            correctInput = true;
+        }
+        else {
+            cout << endl << "Please enter  a valid operation. Try again" << endl << endl;
+        }
+    }
+
+    // Operation happens
+    if (operation == "a+b") {
+        add();
+    }
+    else if (operation == "a-b") {
+        subtract();
+    }
+    else if (operation == "a*b") {
+        multiply();
+    }
+    else {
+        divide();
+    }
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
