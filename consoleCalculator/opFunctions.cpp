@@ -1,6 +1,7 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include <cstdio>  // Use <cstdio> in C++ instead of <stdio.h>
 
 #include "opFunctions.hpp"
 
@@ -9,42 +10,28 @@ static double forceDouble() {
     double number;
 
     while (true) {
+
+        // Read the entire line of input
         std::cin >> input;
 
-        // Check if the input is a valid decimal number using a manual check
-        bool valid = true;
-        bool hasDecimalPoint = false;
+        // Convert the input string to a double
+        char* end;
+        number = std::strtod(input.c_str(), &end);
 
-        for (size_t i = 0; i < input.length(); ++i) {
-            if (input[i] == '.' && !hasDecimalPoint) {
-                // Allow only one decimal point
-                hasDecimalPoint = true;
-            }
-            else if (!isdigit(input[i])) {
-                // If the character is not a digit, set valid to false
-                valid = false;
-                break;
-            }
-        }
-
-        if (!valid) {
-            std::cout << "Invalid input. Please enter a valid decimal number.\n";
-        }
-        else {
-            // Convert the valid input string to a double
-            number = stod(input);
+        // Check if conversion was successful and there are no extra characters
+        if (*end == '\0' && end != input.c_str()) {
+            // Valid number input
             break;
         }
-
-        // Clear the input buffer
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        else {
+            std::cout << "Invalid input. Please enter a valid decimal number." << std::endl;
+        }
     }
 
     return number;
 }
 
-void opFunction (char operation) {
+void opFunction(char operation) {
     // First operand
     std::cout << "Enter first number: \n";
     double firstNum = forceDouble();
@@ -72,20 +59,29 @@ void opFunction (char operation) {
     }
 }
 
-char selectOpFunction () {
+char selectOpFunction() {
     char operation;
     bool correctInput = false;
 
     while (!correctInput) {
         std::cout << "Please enter the operation to perform. Format: + | - | * | / \n";
 
-        std::cin >> operation;
+        // Use std::getline to handle whitespace correctly
+        std::string input;
+        std::getline(std::cin, input);
 
-        if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
-            correctInput = true;
+        // Read the first character from the input
+        if (input.length() == 1) {
+            operation = input[0];
+            if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
+                correctInput = true;
+            }
+            else {
+                std::cout << "\nPlease enter a valid operation. Try again \n\n";
+            }
         }
         else {
-            std::cout << "\nPlease enter a valid operation. Try again \n\n";
+            std::cout << "\nPlease enter a single character operation. Try again \n\n";
         }
     }
 
