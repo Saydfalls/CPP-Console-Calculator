@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    cout << "Calculator Console Application\n" << endl;
+    cout << "Console Calculator Application\n" << endl;
 
     // Choosing an operation
     char operation = selectOpFunction();
@@ -15,7 +15,7 @@ int main() {
     cout << endl;
 
     // Operation happens
-    opFunction();
+    opFunction(operation);
 
     return 0;
 }

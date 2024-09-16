@@ -1,2 +1,2 @@
-void opFunction();
+void opFunction(char operation);
 char selectOpFunction();

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void opFunction () {
+void opFunction (char operation) {
     double firstNum;
     cout << "Enter first number: " << endl;
     cin >> firstNum;
@@ -14,10 +14,18 @@ void opFunction () {
     cin >> secondNum;
     cout << endl;
 
-    cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum;
-    cout << firstNum << " - " << secondNum << " = " << firstNum - secondNum;
-    cout << firstNum << " * " << secondNum << " = " << firstNum * secondNum;
-    cout << firstNum << " / " << secondNum << " = " << firstNum / secondNum;
+    if (operation == '+') {
+        cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum;
+    }
+    else if (operation == '-') {
+        cout << firstNum << " - " << secondNum << " = " << firstNum - secondNum;
+    }
+    else if (operation == '*') {
+        cout << firstNum << " * " << secondNum << " = " << firstNum * secondNum;
+    }
+    else {
+        cout << firstNum << " / " << secondNum << " = " << firstNum / secondNum;
+    }
 }
 
 char selectOpFunction () {
