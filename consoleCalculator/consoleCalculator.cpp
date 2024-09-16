@@ -5,19 +5,59 @@
 using namespace std;
 
 void add() {
-    cout << "";
+    double firstNum;
+    cout << "Enter first number: " << endl;
+    cin >> firstNum;
+    cout << endl;
+
+    double secondNum;
+    cout << "Enter second number: " << endl;
+    cin >> secondNum;
+    cout << endl;
+
+    cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum;
 }
 
 void subtract() {
-    cout << "";
+    double firstNum;
+    cout << "Enter first number: " << endl;
+    cin >> firstNum;
+    cout << endl;
+
+    double secondNum;
+    cout << "Enter second number: " << endl;
+    cin >> secondNum;
+    cout << endl;
+
+    cout << firstNum << " - " << secondNum << " = " << firstNum - secondNum;
 }
 
 void multiply() {
-    cout << "";
+    double firstNum;
+    cout << "Enter first number: " << endl;
+    cin >> firstNum;
+    cout << endl;
+
+    double secondNum;
+    cout << "Enter second number: " << endl;
+    cin >> secondNum;
+    cout << endl;
+
+    cout << firstNum << " * " << secondNum << " = " << firstNum * secondNum;
 }
 
 void divide() {
-    cout << "";
+    double firstNum;
+    cout << "Enter first number: " << endl;
+    cin >> firstNum;
+    cout << endl;
+
+    double secondNum;
+    cout << "Enter second number: " << endl;
+    cin >> secondNum;
+    cout << endl;
+
+    cout << firstNum << " / " << secondNum << " = " << firstNum / secondNum;
 }
 
 int main() {
@@ -40,6 +80,7 @@ int main() {
             cout << endl << "Please enter  a valid operation. Try again" << endl << endl;
         }
     }
+    cout << endl;
 
     // Operation happens
     if (operation == "a+b") {
