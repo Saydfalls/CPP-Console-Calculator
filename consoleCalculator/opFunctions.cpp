@@ -4,14 +4,12 @@
 
 #include "opFunctions.hpp"
 
-using namespace std;
-
 static double forceDouble() {
-    string input;
+    std::string input;
     double number;
 
     while (true) {
-        cin >> input;
+        std::cin >> input;
 
         // Check if the input is a valid decimal number using a manual check
         bool valid = true;
@@ -30,7 +28,7 @@ static double forceDouble() {
         }
 
         if (!valid) {
-            cout << "Invalid input. Please enter a valid decimal number." << endl;
+            std::cout << "Invalid input. Please enter a valid decimal number.\n";
         }
         else {
             // Convert the valid input string to a double
@@ -39,8 +37,8 @@ static double forceDouble() {
         }
 
         // Clear the input buffer
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
     return number;
@@ -48,29 +46,29 @@ static double forceDouble() {
 
 void opFunction (char operation) {
     // First operand
-    cout << "Enter first number: " << endl;
+    std::cout << "Enter first number: \n";
     double firstNum = forceDouble();
 
-    cout << endl;
+    std::cout << "\n";
 
     // Second operand
-    cout << "Enter second number: " << endl;
+    std::cout << "Enter second number: \n";
     double secondNum = forceDouble();
 
-    cout << endl;
+    std::cout << "\n";
 
     // Expression results
     if (operation == '+') {
-        cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum;
+        std::cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum;
     }
     else if (operation == '-') {
-        cout << firstNum << " - " << secondNum << " = " << firstNum - secondNum;
+        std::cout << firstNum << " - " << secondNum << " = " << firstNum - secondNum;
     }
     else if (operation == '*') {
-        cout << firstNum << " * " << secondNum << " = " << firstNum * secondNum;
+        std::cout << firstNum << " * " << secondNum << " = " << firstNum * secondNum;
     }
     else {
-        cout << firstNum << " / " << secondNum << " = " << firstNum / secondNum;
+        std::cout << firstNum << " / " << secondNum << " = " << firstNum / secondNum;
     }
 }
 
@@ -79,15 +77,15 @@ char selectOpFunction () {
     bool correctInput = false;
 
     while (!correctInput) {
-        cout << "Please enter the operation to perform. Format: + | - | * | /" << endl;
+        std::cout << "Please enter the operation to perform. Format: + | - | * | / \n";
 
-        cin >> operation;
+        std::cin >> operation;
 
         if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
             correctInput = true;
         }
         else {
-            cout << endl << "Please enter a valid operation. Try again" << endl << endl;
+            std::cout << "\nPlease enter a valid operation. Try again \n\n";
         }
     }
 

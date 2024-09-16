@@ -3,16 +3,14 @@
 #include <iostream>
 #include "opFunctions.hpp"
 
-using namespace std;
-
 int main() {
 
-    cout << "Console Calculator Application\n" << endl;
+    std::cout << "Console Calculator Application\n\n";
 
     // Choosing an operation
     char operation = selectOpFunction();
 
-    cout << endl;
+    std::cout << "\n";
 
     // Operation happens
     opFunction(operation);
