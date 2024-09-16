@@ -1,7 +1,4 @@
 // consoleCalculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-// consoleCalculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include <iostream>
 
@@ -23,8 +20,7 @@ void divide() {
     cout << "";
 }
 
-int main()
-{
+int main() {
 
     std::cout << "Calculator Console Application\n" << endl;
 
@@ -60,4 +56,3 @@ int main()
     }
 
 }
-
