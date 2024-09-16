@@ -1,0 +1,2 @@
+void opFunction();
+char selectOpFunction();
